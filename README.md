@@ -1,7 +1,7 @@
 # Docker Cassandra Cluster (dcc)
-Docker Cassandra Cluster with persistent storage for data.
+Clean and simple docker-compose Cassandra cluster with persistent storage for data.
 
-Built with docker-compose, based on [official docker image](https://hub.docker.com/_/cassandra/)
+Based on [official docker image](https://hub.docker.com/_/cassandra/)
 
 ## Quick start
 ```
@@ -13,7 +13,7 @@ The data will be stored under `./data/` and kept even if the cluster is destroye
 
 If you want to start fresh again:
 ```
-rm -r ./data/*
+sudo rm -r ./data/*
 ```
 
 ## Destroying the cluster
