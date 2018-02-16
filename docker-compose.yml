@@ -1,11 +1,12 @@
 version: '3'   
 services: 
-  cass1:
+  cass1: 
     image: cassandra:3.11.1
     container_name: cass1
     hostname: cass1
     volumes:
       - ./data/cass1:/var/lib/cassandra    # This is the volume that will persist data for cass1 node
+      - ./etc/cass1:/etc/cassandra   # Use your own config files for full control
     environment: &environment    # Declare and save environments nvariables into "environment"
         CASSANDRA_SEEDS: "cass1,cass2"    # The first two nodes will be seeds
         CASSANDRA_CLUSTER_NAME: SolarSystem
@@ -21,6 +22,7 @@ services:
     hostname: cass2
     volumes:
       - ./data/cass2:/var/lib/cassandra    # This is the volume that will persist data for cass2 node
+      - ./etc/cass2:/etc/cassandra    # Use your own config files for full control
     environment: *environment    # point to "environment" to use the same environment variables as cass1
     depends_on:    
       - cass1    # start cass2 only after cass1 is up
@@ -32,6 +34,7 @@ services:
     hostname: cass3
     volumes:
       - ./data/cass3:/var/lib/cassandra    # This is the volume that will persist data for cass3 node
+      - ./etc/cass3:/etc/cassandra    # Use your own config files for full control
     environment: *environment    # point to "environment" to use the same environment variables as cass1
     depends_on:    
       - cass2    # start cass3 only after cass2
