@@ -45,13 +45,13 @@ docker logs -f cass1
 ## Basic configuration
 Edit [docker-compose.yml](docker-compose.yml) for your needs, keeping in mind the following:
 
-    - An [official docker image](https://hub.docker.com/_/cassandra/) for cassandra must be used
-    - You should specify an explicit version tag
-    - Each cassandra container needs to have two volumes configured, one for data and one for config files
-    - Some basic Cassandra configuration can be done through `CASSANDRA_` environment  variables
-    - Check the config with `docker-compose config` before running `./setup-config.sh`
+   - An [official docker image](https://hub.docker.com/_/cassandra/) for cassandra must be used
+   - You should specify an explicit version tag
+   - Each cassandra container needs to have two volumes configured, one for data and one for config files
+   - Some basic Cassandra configuration can be done through `CASSANDRA_` environment  variables
+   - Check the config with `docker-compose config` before running `./setup-config.sh`
 
 ## Advanced configuration
-If you need more advanced configuration, you can edit config files (eg. cassandra.yaml) for each node under `etc/<node>/`.
+If you need more advanced configuration, you can edit config files (eg. cassandra.yaml) for each node under `etc/<node>/`
 
-Some examples can be found in this [blog post](https://digitalis.io/blog/).
+Some practical examples can be found in this [blog post](https://digitalis.io/blog/)
