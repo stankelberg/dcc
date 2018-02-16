@@ -8,11 +8,9 @@ This approach is based on [official docker image](https://hub.docker.com/_/cassa
 ./setup-config.sh
 docker-compose up -d
 ```
-That will bring up a Cassandra cluster consisting of 3 nodes: `cass1`, `cass2`, `cass3`
-
-The data will be stored under `./data/` and kept even if the cluster is destroyed.
-
-Configuration files will be stored under `./etc/`.
+   - That will bring up a Cassandra cluster consisting of 3 nodes: `cass1`, `cass2`, `cass3`
+   - The data will be stored under `./data/` and kept even if the cluster is destroyed
+   - Configuration files will be stored under `./etc/`
 
 If you want to start fresh again:
 ```
