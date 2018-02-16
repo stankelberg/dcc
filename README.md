@@ -49,6 +49,7 @@ Edit [docker-compose.yml](docker-compose.yml) for your needs, keeping in mind th
     - You should specify an explicit version tag
     - Each cassandra container needs to have two volumes configured, one for data and one for config files
     - Some basic Cassandra configuration can be done through `CASSANDRA_` environment  variables
+    - Check the config with `docker-compose config` before running `./setup-config.sh`
 
 ## Advanced configuration
 If you need more advanced configuration, you can edit config files (eg. cassandra.yaml) for each node under `etc/<node>/`.
