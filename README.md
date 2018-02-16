@@ -8,13 +8,13 @@ This approach is based on [official docker image](https://hub.docker.com/_/cassa
 ./setup-config.sh
 docker-compose up -d
 ```
-   - That will bring up a Cassandra cluster consisting of 3 nodes. Note: that will require 6G of free RAM
+   - That will bring up a 3 node Cassandra cluster. Note: it will require ~6G of RAM free for 3 nodes
    - The data will be stored under `./data/` and kept even if the cluster is destroyed
    - Configuration files will be stored under `./etc/`
 
 If you want to start fresh again:
 ```
-sudo rm -r ./data/*
+sudo rm -r ./data/* ./etc/*
 ```
 
 ## Destroying the cluster

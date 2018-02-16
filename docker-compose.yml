@@ -4,6 +4,10 @@ services:
     image: cassandra:3.11.1
     container_name: cass1
     hostname: cass1
+    networks:
+      - cassandra
+    ports:
+      - "9042:9042"  # Expose native binary CQL port for your apps
     volumes:
       - ./data/cass1:/var/lib/cassandra    # This is the volume that will persist data for cass1 node
       - ./etc/cass1:/etc/cassandra   # Use your own config files for full control
@@ -20,6 +24,10 @@ services:
     image: cassandra:3.11.1
     container_name: cass2
     hostname: cass2
+    networks:
+      - cassandra
+    ports:
+      - "9043:9042"  # Expose native binary CQL port for your apps
     volumes:
       - ./data/cass2:/var/lib/cassandra    # This is the volume that will persist data for cass2 node
       - ./etc/cass2:/etc/cassandra    # Use your own config files for full control
@@ -32,6 +40,10 @@ services:
     image: cassandra:3.11.1
     container_name: cass3
     hostname: cass3
+    networks:
+      - cassandra
+    ports:
+      - "9044:9042"  # Expose native binary CQL port for your apps
     volumes:
       - ./data/cass3:/var/lib/cassandra    # This is the volume that will persist data for cass3 node
       - ./etc/cass3:/etc/cassandra    # Use your own config files for full control
@@ -39,3 +51,5 @@ services:
     depends_on:    
       - cass2    # start cass3 only after cass2
 
+networks:
+  cassandra:
