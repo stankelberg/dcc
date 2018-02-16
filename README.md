@@ -8,8 +8,10 @@ This approach is based on [official docker image](https://hub.docker.com/_/cassa
 ./setup-config.sh
 docker-compose up -d
 
+# WARNING:
 # ./setup-config.sh doesn't work on MacOS atm, because Mac version of docker command line doesn't allow passing variables
 # in order to fix it, replace all instances of ${CASSANDRA_VERSION} in the script with an explicit version number
+# works fine on Linux
 ```
    - That will bring up a 3 node Cassandra cluster. Note: it will require ~6G of RAM free for 3 nodes
    - The data will be stored under `./data/` and kept even if the cluster is destroyed
