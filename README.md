@@ -10,7 +10,9 @@ docker-compose up -d
 ```
    - That will bring up a 3 node Cassandra cluster. Note: it will require ~6G of RAM free for 3 nodes
    - The data will be stored under `./data/` and kept even if the cluster is destroyed
-   - Configuration files will be stored under `./etc/`
+   - Cassandra configuration files will be stored under `./etc/`
+   - You can access the cluster from your app on `localhost:9042, localhost:9043, localhost:9044` 
+   - Or can add a container with your app to [docker-compose.yml](docker-compose.yml)
 
 If you want to start fresh again:
 ```
